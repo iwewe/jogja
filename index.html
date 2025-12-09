@@ -1,34 +1,81 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<title>Gawe ukara basa walikan Jogja versi Siji (pas)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="title" content="Gawe ukara basa walikan Jogja"/>
-<meta name="description" content="Gawe ukara basa walikan Jogja"/>
-<link rel="stylesheet" type="text/css" href="styles.css"/>
-<link rel="SHORTCUT ICON" href="/web/20100111192122im_/http://t4mp4h.org/wp-content/themes/t4mp4h/favicon/favicon.ico"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walikan Jogja | Gawe Ukara Basa Walikan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div id="pgDiv">
-<h1>.: Gawe ukara <em>basa walikan</em> JOGJA :.</h1>
-<form name="f">
-<p><span class="l"> Tulisno ukara sing pingin diwalik utowo arep mithanginynye dadhep nang kolom ngisor iki:</span><br/>
-<textarea rows="3" cols="100" name="original" onkeyup="walik()" style="background-color: #c6e6e7" class="inputBox"></textarea><br/>
-<span class="l"></span></p>
-<p><span class="l">Dhadine kaya ledhe pinyi : </span> <span class="g">(terus isa mbok salin sak-karepmu nang endhi wae ... tapi ojo kanggo <strong>pisuhan</strong> su !!)</span><br/>
-<textarea rows="3" cols="105" name="kewalik" id="i" onclick="SelectAll('i');" readonly="readonly" style="background-color: #e6e6fa" class="inputBox"></textarea></p>
-</form>
-<div style="color: #888888; font-size: 11px; width: 750px; margin-bottom: 10px; line-height: 15px"></div>
-<div style="display: block; width: 800px; clear: both"></div>
-<div style="padding-top: 5px; padding-bottom: 20px; color: #888888; font-size: 10pt">
-<div style="color: #888888; font-size: 11px; width: 750px; margin-bottom: 10px; line-height: 15px">
-<div style="margin: 0px 0px 10px; float: left" id="diggthis"> </div>Programing <em>ndangil njur dioprek sakperlune seka</em> <a href="https://web.archive.org/web/20100111192122/http://rony.dgworks.net/uploads/dagadu/index.html">Rony Lantip</a> <br/>
-Nek ono sing wagu utawa kleru, <a href=""> kandhani aku yo cah </a>!<br/>
-<br/>Hak Cipta dilindungi <strong>Japhe Methe Licensed©</strong>, enthuk mbok kandhani kancamu ndik Multiply, Facebook, Wordpress, Blogspot, Kaskus, Friendster, Twitter, Plurk, Hi5, MySpace, Yahoo, MSN, AOL, Bebo, Gmail, angkringan, lesehan...lan liyane.  <br/>
-<br/>
-<h1><strong>
-<blink>Love Jogja n You !!</blink></strong></h1></div></div>
-</div>
-<script src="walikan.js"></script>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Bahasa Walikan Jogja</p>
+      <h1>Gawe Ukara <span>Basa Walikan</span> khas Ngayogyakarta</h1>
+      <p class="hero__subtitle">Ketik ukara ing basa Indonesia utawa Jawa, banjur delengen piye uwapike diganti dadi gaya walikan Jogja sing unik.</p>
+      <div class="hero__badges">
+        <span class="badge">ngopi Tugu Jogja</span>
+        <span class="badge">mancing Kali Progo</span>
+        <span class="badge">turu Kaliurang</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="card form-card">
+      <header class="card__header">
+        <div>
+          <p class="section-label">Generator</p>
+          <h2>Tulis ukaramu</h2>
+          <p class="section-subtitle">Ketik wae nganggo keyboard terus asil walikan bakal muncul otomatis.</p>
+        </div>
+        <div class="card__accent">Walikan Jogja</div>
+      </header>
+      <form id="walikan-form" autocomplete="off">
+        <label class="input-label" for="original">Teks asli</label>
+        <textarea id="original" name="original" class="input" rows="4" placeholder="Contoh: Sugeng rawuh ing kutha Yogyakarta, ayo mangan gudeg bareng." ></textarea>
+        <div class="actions">
+          <button type="button" class="button button--ghost" id="clear-btn">Bersihkan</button>
+          <span id="char-count" class="muted">0 karakter</span>
+        </div>
+
+        <label class="input-label" for="kewalik">Hasil walikan</label>
+        <textarea id="kewalik" name="kewalik" class="input input--result" rows="4" readonly></textarea>
+        <div class="actions">
+          <button type="button" class="button" id="copy-btn">Salin hasil</button>
+          <span id="copy-status" class="copy-status" aria-live="polite" role="status"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="card info-card">
+      <div class="info-grid">
+        <div>
+          <p class="section-label">Kenapa unik?</p>
+          <h3>Walikan khas Jogja</h3>
+          <p>Bahasa walikan Jogja asline seka hanacaraka sing diwolak-walik: <em>ng</em> dadi <em>l</em>, <em>dh</em> dadi <em>n</em>, lan liyane. Nikmati logat khas Jogja kaya nalika nyawang Tugu ing sore hari.</p>
+        </div>
+        <ul class="feature-list">
+          <li>
+            <h4>Realtime</h4>
+            <p>Hasil langsung muncul nalika sampeyan ngetik tanpa kudu klik tombol apa wae.</p>
+          </li>
+          <li>
+            <h4>Gampang disalin</h4>
+            <p>Gunakake tombol salin kanggo nuduhake ukaramu menyang kanca-kanca.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Digarap karo katresnan kanggo Jogja. Yen nemu sing kurang pas, monggo diingetke.</p>
+  </footer>
+
+  <script src="walikan.js"></script>
 </body>
 </html>
